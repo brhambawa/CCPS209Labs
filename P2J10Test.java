@@ -43,7 +43,8 @@ public class P2J10Test {
             check.update(result.getNum().intValue());
             check.update(result.getDen().intValue());
             // if(i < 10) {
-                // System.out.println(Arrays.toString(v1) + " " + Arrays.toString(v2) + " " + result);
+                // System.out.println(mode + " " + 
+                // Arrays.toString(v1) + " " + Arrays.toString(v2) + " " + result);
             // }
         }
         assertEquals(expected, check.getValue());
