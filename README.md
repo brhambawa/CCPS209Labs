@@ -1,8 +1,8 @@
 # CCPS 209 Labs
 
-This repository contains the labs in the course [CCPS 209 Computer Science II](https://github.com/ikokkari/JavaExamples), as taught by [Ilkka Kokkarinen](https://www.cs.ryerson.ca/~ikokkari/) for the Chang School of Continuing Education, Ryerson University, Toronto.
+This repository contains the labs and the automated JUnit test classes for the course [CCPS 209 Computer Science II](https://github.com/ikokkari/JavaExamples), as taught by [Ilkka Kokkarinen](https://www.cs.ryerson.ca/~ikokkari/) for the Chang School of Continuing Education, Ryerson University, Toronto. There are currently 61 problems available so that students can freely choose the problems they wish to solve, depending on their inclinations and areas of personal interest.
 
-The lab specifications are given in the document [CCPS 209 Labs](https://github.com/ikokkari/CCPS209Labs/blob/master/CCPS%20209%20Labs.pdf).
+The specifications for the lab problems are given in the 135-page document [CCPS 209 Labs](https://github.com/ikokkari/CCPS209Labs/blob/master/CCPS%20209%20Labs.pdf).
 
 Text of `warandpeace.txt` taken from [Project Gutenberg](http://www.gutenberg.org/ebooks/2600).
 
