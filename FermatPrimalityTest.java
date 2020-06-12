@@ -28,7 +28,7 @@ public class FermatPrimalityTest {
         long p = 5;
         for(int i = 0; i < 70000; i++) {
             int a = rng.nextInt((int)Math.min(Integer.MAX_VALUE, p - 3)) + 2;
-            boolean result = FermatPrimality.isNegativeFermatWitness(p, 2);
+            boolean result = FermatPrimality.isFermatNegativeWitness(p, 2);
             if(!result) { 
                 //System.out.println(p + " " + a + " " + result); 
             }
