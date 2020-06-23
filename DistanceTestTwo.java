@@ -19,11 +19,11 @@ public class DistanceTestTwo {
     }
 
     @Test public void testAdd() {
-        testArithmetic(true, 3017655078L);
+        testArithmetic(true, 3958655797L);
     }
     
     @Test public void testSubtract() {
-        testArithmetic(false, 3418002481L);
+        testArithmetic(false, 1087353738L);
     }
     
     private void testArithmetic(boolean add, long expected) {
@@ -44,10 +44,7 @@ public class DistanceTestTwo {
                 int j2 = rng.nextInt(i);
                 ds[i] = add ? ds[j1].add(ds[j2]) : ds[j1].subtract(ds[j2]);
                 String verb = add ? "added" : "subtracted";
-                //System.out.println(pts[j1] + " " + verb + " to " + pts[j2] + " gives " + pts[i]);
                 Distance sub = ds[i].subtract(ds[i]);
-                //System.out.println("mul equals " + pts[i].mul(Distance.MINUS_ONE));
-                //System.out.println("sub equals " + sub);
                 assertEquals(Distance.ZERO, sub);
                 if(i > 0) { assertEquals(ds[i], ds[i].add(ds[i-1]).subtract(ds[i-1])); }
                 check.update(ds[i].toString().getBytes());
@@ -85,7 +82,7 @@ public class DistanceTestTwo {
             }
             check.update(ds[i].toString().getBytes());
         }
-        assertEquals(779098568L, check.getValue());
+        assertEquals(3817969894L, check.getValue());
     }
     
     

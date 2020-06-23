@@ -33,9 +33,11 @@ public class DistanceTestOne {
             int base = rng.nextInt(3 * (i + 2)) + 1;
             Distance d = new Distance(whole, base);
             String rep = d.toString();
-            //System.out.println(whole + " " + base + " : <" + rep + ">"); 
+            // if(i % 50 == 0 && i < 1000) { 
+                // System.out.println(whole + " " + base + " : <" + rep + ">"); 
+            // }
             check.update(rep.getBytes());
         }
-        assertEquals(4065287689L, check.getValue());
+        assertEquals(876362689L, check.getValue());
     }    
 }
