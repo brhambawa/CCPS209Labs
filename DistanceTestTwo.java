@@ -19,11 +19,11 @@ public class DistanceTestTwo {
     }
 
     @Test public void testAdd() {
-        testArithmetic(true, 3958655797L);
+        testArithmetic(true, 836768866L);
     }
     
     @Test public void testSubtract() {
-        testArithmetic(false, 1087353738L);
+        testArithmetic(false, 4281111779L);
     }
     
     private void testArithmetic(boolean add, long expected) {
@@ -82,7 +82,7 @@ public class DistanceTestTwo {
             }
             check.update(ds[i].toString().getBytes());
         }
-        assertEquals(3817969894L, check.getValue());
+        assertEquals(2108081313L, check.getValue());
     }
     
     

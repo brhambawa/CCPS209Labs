@@ -38,6 +38,6 @@ public class DistanceTestOne {
             // }
             check.update(rep.getBytes());
         }
-        assertEquals(876362689L, check.getValue());
+        assertEquals(4065287689L, check.getValue());
     }    
 }
