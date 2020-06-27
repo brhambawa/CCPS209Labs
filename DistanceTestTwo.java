@@ -9,6 +9,8 @@ import java.util.zip.CRC32;
 
 public class DistanceTestTwo {
 
+    public static final Distance ZERO = new Distance(0, 1);
+    
     private static final int SEED = 123456;
     private void randomPoints(int[] out, int n, Random rng) {
         for(int j = 0; j < 4; j++) {
@@ -45,8 +47,8 @@ public class DistanceTestTwo {
                 ds[i] = add ? ds[j1].add(ds[j2]) : ds[j1].subtract(ds[j2]);
                 String verb = add ? "added" : "subtracted";
                 Distance sub = ds[i].subtract(ds[i]);
-                assertEquals(Distance.ZERO, sub);
-                if(i > 0) { assertEquals(ds[i], ds[i].add(ds[i-1]).subtract(ds[i-1])); }
+                assertEquals(ZERO.toString(), sub.toString());
+                if(i > 0) { assertEquals(ds[i].toString(), ds[i].add(ds[i-1]).subtract(ds[i-1]).toString()); }
                 check.update(ds[i].toString().getBytes());
             }
         }
