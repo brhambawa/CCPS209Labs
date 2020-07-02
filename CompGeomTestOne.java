@@ -18,7 +18,7 @@ public class CompGeomTestOne {
     }
     
     @Test public void testSegmentIntersectHundred() {
-        testSegmentIntersect(100, 3714949161L, true);
+        testSegmentIntersect(100, 3714949161L, false);
     }
     
     @Test public void testSegmentIntersectMillion() {
