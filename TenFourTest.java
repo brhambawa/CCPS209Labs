@@ -10,7 +10,7 @@ import java.util.zip.CRC32;
 public class TenFourTest {
 
     @Test public void testShortestPathThousand() {
-        testShortestPath(1000, 1107845552L);
+        testShortestPath(500, 1154212991L);
     }
     
     private void testShortestPath(int n, long expected) {
@@ -20,7 +20,7 @@ public class TenFourTest {
             List<Integer> result;
             do {
                 result = TenFour.shortestPath(i, limit);
-                limit = limit * 10;
+                limit = limit * 2;
             } while(result.size() == 0);
             //System.out.println(i + ": " + result);
             check.update(result.toString().getBytes());

@@ -18,11 +18,11 @@ public class CompGeomTestThree {
     }
     
     @Test public void testPointInConvexHundred() {
-        testPointInConvex(100, 126590431L, false);
+        testPointInConvex(100, 3409262577L, false);
     }
     
     @Test public void testPointInConvexMillion() {
-        testPointInConvex(1_000_000, 1618696539L, false);
+        testPointInConvex(1_000_000, 625739499L, false);
     }
     
     private void testPointInConvex(int n, long expected, boolean verbose) {
@@ -32,10 +32,13 @@ public class CompGeomTestThree {
         int x, y;
         for(int i = 0; i < n; i++) {
             int nn = i / 5 + 3;
-            for(int j = 0; j < 3; j++) {
-                xs[j] = rng.nextInt(nn) - nn / 2;
-                ys[j] = rng.nextInt(nn) - nn / 2;
-            }
+            // Ensure that random triangle is not just a point or a line segment.
+            do { 
+                for(int j = 0; j < 3; j++) {
+                    xs[j] = rng.nextInt(nn) - nn / 2;
+                    ys[j] = rng.nextInt(nn) - nn / 2;
+                }
+            } while(ccw(xs[0], ys[0], xs[1], ys[1], xs[2], ys[2]) == 0);
             // Make sure triangle is counterclockwise.
             if(ccw(xs[0], ys[0], xs[1], ys[1], xs[2], ys[2]) <= 0) {
                 int tmp = xs[0]; xs[0] = xs[1]; xs[1] = tmp;
@@ -44,7 +47,7 @@ public class CompGeomTestThree {
             if(rng.nextBoolean()) {
                 x = rng.nextInt(nn) - nn / 2;
                 y = rng.nextInt(nn) - nn / 2;
-            } else { // Create a bunch more hits than random chance would
+            } else { // Create a bunch more hits than sheer random chance would
                 x = (xs[0] + xs[1] + xs[2]) / 3;
                 y = (ys[0] + ys[1] + ys[2]) / 3;
             }
