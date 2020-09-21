@@ -57,7 +57,7 @@ public class TimeProblemsTest {
         assertEquals(1758684803L, check.getValue());
     }
 
-    // Since the set of Zone Ids can change in future versions of Java, here is
+    // Since the set of Zone Ids might change in future versions of Java, here is
     // a random sampler that will remain fixed in this tester.
     private static String[] ourZones = {
         "America/Fort_Nelson", "Arctic/Longyearbyen", "Africa/Casablanca", "Europe/Kirov",
