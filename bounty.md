@@ -1,6 +1,31 @@
+<!-- Output copied to clipboard! -->
+
+<!-----
+NEW: Check the "Suppress top comment" option to remove this info from the output.
+
+Conversion time: 0.58 seconds.
+
+
+Using this Markdown file:
+
+1. Paste this output into your source file.
+2. See the notes and action items below regarding this conversion run.
+3. Check the rendered output (headings, lists, code blocks, tables) for proper
+   formatting and use a linkchecker before you publish this page.
+
+Conversion notes:
+
+* Docs to Markdown version 1.0β29
+* Thu Oct 22 2020 07:31:59 GMT-0700 (PDT)
+* Source doc: Bug Bounty List for CCPS 209
+* Tables are currently converted to HTML tables.
+----->
+
+
+
 # Bug Bounty List for CCPS 209
 
-The following lab problems were among the big bunch that was added to the set during the pandemic isolation of the Spring and Summer of 2020. As of this writing, they have not yet been solved and submitted by any students. To ensure that these problems and their automated testers do not contain any errors that would make them impossible for students to solve, the author Ilkka Kokkarinen offers a bounty of **three extra lab marks** to the first solver of each problem in the list below.
+The following lab problems were among the big bunch that was added to the set during the pandemic isolation of Spring and Summer of 2020. As of this writing, the listed problems have not yet been solved and submitted by any students. To ensure that these problems and their automated testers do not contain any errors that would make them impossible for students to solve, the author Ilkka Kokkarinen offers a bounty of **three extra lab marks** to the first solver of each problem in the list below.
 
 Knowing the rate that the existing lab problems for 109 and 209 have contained errors in their model solutions and therefore in their automated mass testers, the following list should contain at least four or five problems whose testers are currently impossible to pass even with a 100% correct working solution. Students who are reasonably sure that their solution is correct should submit their solution for the instructor for comparison. Any solution that reveals a bug in the automated tester will receive a double bounty of **six extra lab marks**.  
 
