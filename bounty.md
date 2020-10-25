@@ -46,7 +46,7 @@ All these bounty points will be added to the lab marks of those students all in 
   <tr>
    <td>18. Working scale
    </td>
-   <td>
+   <td>Zhengchao Gou, Oct 24
    </td>
   </tr>
   <tr>
