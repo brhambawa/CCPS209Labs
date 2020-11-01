@@ -124,7 +124,7 @@ All these bounty points will be added to the lab marks of those students all in 
   <tr>
    <td>39. Hot potato
    </td>
-   <td>
+   <td>Wendelle So, Nov 1
    </td>
   </tr>
   <tr>
@@ -136,19 +136,19 @@ All these bounty points will be added to the lab marks of those students all in 
   <tr>
    <td>45. Permutations I: Algebraic Operations
    </td>
-   <td>
+   <td>Wendelle So, Nov 1
    </td>
   </tr>
   <tr>
    <td>46. Permutations II: Cycles
    </td>
-   <td>
+   <td>Wendelle So, Nov 1
    </td>
   </tr>
   <tr>
    <td>47. Permutations III: Lehmer codes
    </td>
-   <td>
+   <td>Wendelle So, Nov 1
    </td>
   </tr>
   <tr>
