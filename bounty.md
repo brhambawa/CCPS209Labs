@@ -118,7 +118,7 @@ All these bounty points will be added to the lab marks of those students all in 
   <tr>
    <td>38. Euclid's orchard
    </td>
-   <td>
+   <td>Wendelle So, Nov 6
    </td>
   </tr>
   <tr>
