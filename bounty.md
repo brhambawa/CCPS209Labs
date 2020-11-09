@@ -52,7 +52,7 @@ All these bounty points will be added to the lab marks of those students all in 
   <tr>
    <td>22. Truchet tiles
    </td>
-   <td>
+   <td>Karl Bustamante, Nov 8
    </td>
   </tr>
   <tr>
