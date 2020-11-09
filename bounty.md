@@ -58,7 +58,7 @@ All these bounty points will be added to the lab marks of those students all in 
   <tr>
    <td>23. Ulam-Warburton crystals
    </td>
-   <td>
+   <td>Karl Bustamante, Nov 9
    </td>
   </tr>
   <tr>
