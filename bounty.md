@@ -64,7 +64,7 @@ All these bounty points will be added to the lab marks of those students all in 
   <tr>
    <td>24. Chips on fire 
    </td>
-   <td>
+   <td>Karl Bustamante, Nov 10
    </td>
   </tr>
   <tr>
