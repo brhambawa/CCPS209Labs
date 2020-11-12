@@ -70,7 +70,7 @@ All these bounty points will be added to the lab marks of those students all in 
   <tr>
    <td>25. Manhattan skyline
    </td>
-   <td>
+   <td>Karl Bustamante, Nov 11
    </td>
   </tr>
   <tr>
