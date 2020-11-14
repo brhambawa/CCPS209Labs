@@ -184,7 +184,7 @@ All these bounty points will be added to the lab marks of those students all in 
   <tr>
    <td>53. Tchoukaillon
    </td>
-   <td>
+   <td>Karl Bustamante, Nov 14
    </td>
   </tr>
 </table>
