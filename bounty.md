@@ -88,7 +88,7 @@ All these bounty points will be added to the lab marks of those students all in 
   <tr>
    <td>30. Mark and rewind
    </td>
-   <td>
+   <td>Kelsey Friesen, Nov 27
    </td>
   </tr>
   <tr>
