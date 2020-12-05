@@ -33,10 +33,11 @@ public class P2J7Test {
                         p += rng.nextInt(p);
                     }
                 } while(seen.contains(p));
+                assert p > 0;
                 seen.add(p);
                 pops[j] = p;
             }
-            int seats = 2 * i + rng.nextInt(i + 2);
+            int seats = 2 * i + rng.nextInt(10 * i + 2);
             int[] result = P2J7.huntingtonHill(pops, seats);
             check.update(Arrays.toString(result).getBytes());
             // if(i < 10) {
@@ -44,7 +45,7 @@ public class P2J7Test {
                 // System.out.println("Results for " + seats + " is " + Arrays.toString(result));
             // }
         }
-        assertEquals(3779035071L, check.getValue());
+        assertEquals(811873173L, check.getValue());
     }
 
     @Test public void testJosephus() {
