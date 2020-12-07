@@ -154,7 +154,7 @@ All these bounty points will be added to the lab marks of those students all in 
   <tr>
    <td>48. Disjoint clumps
    </td>
-   <td>
+   <td>Karl Bustamante, Dec 6
    </td>
   </tr>
   <tr>
