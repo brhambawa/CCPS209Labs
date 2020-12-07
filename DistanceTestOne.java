@@ -28,6 +28,7 @@ public class DistanceTestOne {
     
     private static int[][][] testCases = {
         { {61, 3} }, // each term is {root, coefficient}, so this means 3Sqrt[61]
+        { {5, 0} },
         { {1003, -42} },
         { {1, -1}, {2, 3}, {10, -1}, {17, 2}  },
         { {5, -1}, {3, -1}, {2, -1} }, 
@@ -38,11 +39,13 @@ public class DistanceTestOne {
         // Terms whose roots are equal after extracting the square must be combined.
         { {2, -1}, {4, -1}, {8, -1}, {16, -1}, {32, -1}, {64, -1}, {128, -1} },
         { {10*10, 5}, {100*100, -5}, {1000*1000, 5} },
-        { {5, 1}, {10, -1}, {15, 1}, {20,-1} }
+        { {5, 1}, {10, -1}, {15, 1}, {20,-1} },
+        { {11, 4}, {23, 4}, {11*4, -2}, {23*4, -2} }
     };
     
     private static String[] expected = {
         "3Sqrt[61]",
+        "0",
         "-42Sqrt[1003]",
         "-1 + 3Sqrt[2] - Sqrt[10] + 2Sqrt[17]",
         "-Sqrt[2] - Sqrt[3] - Sqrt[5]",
@@ -52,7 +55,8 @@ public class DistanceTestOne {
         "-Sqrt[2] - Sqrt[3] - Sqrt[5] - Sqrt[7] - Sqrt[11] - Sqrt[13]",
         "-14 - 15Sqrt[2]",
         "4550",
-        "-Sqrt[5] - Sqrt[10] + Sqrt[15]"
+        "-Sqrt[5] - Sqrt[10] + Sqrt[15]",
+        "0"
     };
     
     @Test public void testToString() {
