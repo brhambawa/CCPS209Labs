@@ -71,20 +71,33 @@ public class SardinesTest {
         massTest(1_000_000, 21);
     }
     
-    // Two billion is just within the range of Java int type.
+    // Two billion is just within the range of Java int type. Uncomment this
+    // test for a stress test of your Sardines implementation if you want to.
+    /*
     @Test public void massTestBillionAndTwo() {
         massTest(1_000_000_000, 2);
     }
+    */
     
     private void massTest(int n, int k) {
         Random rng = new Random(12345);
         Sardines ba = new Sardines(n, k);
-        int c = 0, cc;
+        int c = 0, cc, range = 1 << (k-1);
+        // Each assigned element is correctly stored.
         for(int i = 0; i < 17 * n; i++) {
             ba.set(i % n, c);
             cc = ba.get(i % n);
             assertEquals(c, cc);
-            c = (c + 1) % (1 << k);
+            c = (c + 1) % range;
+        }
+        // Make sure that assignment does not clobber neighbouring values.
+        for(int i = 0; i < n; i++) {
+            ba.set(i, rng.nextInt(range));
+        }
+        // Using the same rng, verify that all values are stored as they should.
+        rng = new Random(12345);
+        for(int i = 0; i < n; i++) {
+            assertEquals(rng.nextInt(range), ba.get(i));
         }
     }
     
