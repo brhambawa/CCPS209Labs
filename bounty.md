@@ -76,7 +76,7 @@ All these bounty points will be added to the lab marks of those students all in 
   <tr>
    <td>27. Stacking images
    </td>
-   <td>
+   <td>Zhengchao Gou, Dec 6
    </td>
   </tr>
   <tr>
