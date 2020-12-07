@@ -39,7 +39,7 @@ public class BitwiseStuffTest {
             //Long.toHexString(m) + " " + Long.bitCount(m));
             check.update(result);
         }
-        assertEquals(1244201261L, check.getValue());
+        assertEquals(505332074L, check.getValue());
     }
     
     @Test public void testReverseNybbles() {
