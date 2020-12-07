@@ -25,7 +25,7 @@ public class SardinesTest {
                 assertTrue(false);
             } catch(IllegalArgumentException e) { }
             for(int k = 2; k < 30; k++) {
-                try { // Total number of bits is too much.
+                try { // Total number of bits is a bit too much.
                     new Sardines(Integer.MAX_VALUE / k + 1, k);
                     assertTrue(false);
                 } catch(IllegalArgumentException e) { }
@@ -39,8 +39,9 @@ public class SardinesTest {
             } catch(IllegalArgumentException e) { }
             try { // Maximum legal element value, should succeed.
                 ba.set(0, 31); // (1 << 5) == 32
-                ba.set(999, 31); // Just in case there is an error in the end
-            } catch(IllegalArgumentException e) { 
+                ba.set(999, 31); // Just in case there is a bug at the end case.
+            } catch(IllegalArgumentException e) {
+                System.out.println(e);
                 assertTrue(false);
             }
             try { // Element value too big, should fail.
@@ -64,6 +65,7 @@ public class SardinesTest {
     }
     
     @Test public void massTestThousandAndFive() {
+        System.out.println(1 << 31);
         massTest(1000, 5);
     }
     
@@ -71,8 +73,13 @@ public class SardinesTest {
         massTest(1_000_000, 21);
     }
     
+    @Test public void massTestMillionAndThirtyOne() {
+        massTest(1_000_000, 31);
+        
+    }
+    
     // Two billion is just within the range of Java int type. Uncomment this
-    // test for a stress test of your Sardines implementation if you want to.
+    // for a stress test of your Sardines implementation, if you feel brave.
     /*
     @Test public void massTestBillionAndTwo() {
         massTest(1_000_000_000, 2);
