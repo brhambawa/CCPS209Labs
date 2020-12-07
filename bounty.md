@@ -160,7 +160,7 @@ All these bounty points will be added to the lab marks of those students all in 
   <tr>
    <td>49. Bits of this and that
    </td>
-   <td>
+   <td>Karl Bustamante, Dec 7
    </td>
   </tr>
   <tr>
