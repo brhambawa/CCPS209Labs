@@ -12,7 +12,7 @@ public class ClumpsTest {
     @Test public void testClumps() {
         CRC32 check = new CRC32();
         Random rng = new Random(12345);
-        int n = 2, trials = 20;
+        int n = 2, trials = 22;
         int[] primes = {
             3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71
         };
@@ -46,6 +46,6 @@ public class ClumpsTest {
             }
             n = n * 2; // Next test is twice as big.
         }
-        assertEquals(2943449783L, check.getValue());
+        assertEquals(1485810445L, check.getValue());
     }    
 }
