@@ -13,6 +13,32 @@ public class P2J7Test {
     private static final int SEED = 76543;
 
     @Test public void testHuntingtonHill() {
+        // Explicit test cases
+        int[] a1 = {42};
+        int[] b1 = {5};
+        assertArrayEquals(b1, P2J7.huntingtonHill(a1, 5));
+        
+        int[] a2 = {3, 4};
+        int[] b2 = {2, 2};
+        assertArrayEquals(b2, P2J7.huntingtonHill(a2, 4));
+        
+        int[] a3 = {18, 17};
+        int[] b3 = {4, 3};
+        assertArrayEquals(b3, P2J7.huntingtonHill(a3, 7));
+        
+        int[] a4 = {17, 3, 4, 10, 11, 14};
+        int[] b4 = {2, 1, 1, 1, 1, 2};
+        assertArrayEquals(b4, P2J7.huntingtonHill(a4, 8));
+        
+        int[] a5 = {13, 15, 20, 33, 45, 55, 60, 82};
+        int[] b5 = {1, 1, 2, 3, 3, 4, 5, 6};
+        assertArrayEquals(b5, P2J7.huntingtonHill(a5, 25));       
+        
+        int[] a6 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        int[] b6 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        assertArrayEquals(b6, P2J7.huntingtonHill(a6, 55)); 
+        
+        // Pseudorandom fuzz tester
         Random rng = new Random(SEED);
         CRC32 check = new CRC32();
         HashSet<Integer> seen = new HashSet<>();
@@ -40,15 +66,31 @@ public class P2J7Test {
             int seats = 2 * i + rng.nextInt(10 * i + 2);
             int[] result = P2J7.huntingtonHill(pops, seats);
             check.update(Arrays.toString(result).getBytes());
-            // if(i < 10) {
-                // System.out.println("Populations are " + Arrays.toString(pops));
-                // System.out.println("Results for " + seats + " is " + Arrays.toString(result));
-            // }
         }
         assertEquals(811873173L, check.getValue());
     }
 
     @Test public void testJosephus() {
+        // Explicit test cases
+        List<Integer> a1 = Arrays.asList(42, 99, 17, 5);
+        String b1 = "[17, 99, 5, 42]";
+        assertEquals(b1, P2J7.josephus(a1, 3).toString());
+        
+        List<String> a2 = Arrays.asList("joe", "moe", "bob", "rob", "tom");
+        String b2 = "[moe, rob, joe, tom, bob]";
+        assertEquals(b2, P2J7.josephus(a2, 2).toString());
+        
+        List<Double> a3 = Arrays.asList(123.456);
+        String b3 = "[123.456]";
+        assertEquals(b3, P2J7.josephus(a3, 99).toString());
+        
+        List<Character> a4 = Arrays.asList(
+        '\u047C', '\u042b', '\u0413', '\u042f', '\u04cb', '\u0410', '\u0415'
+        );
+        String b4 = "[Ӌ, Г, Ы, Я, Е, Ѽ, А]";
+        assertEquals(b4, P2J7.josephus(a4, 5).toString());
+        
+        // Pseudorandom fuzz tester
         Random rng = new Random(SEED);
         CRC32 check = new CRC32();
         List<String> people = Arrays.asList(
@@ -63,8 +105,6 @@ public class P2J7Test {
             if(i >= people.size()) { next += i; }
             items.add(next);
             int k = rng.nextInt(2 * i + 2) + 1;
-            // Sometimes you want to have stuff like this for debugging purposes:
-            // if(k < 10) { System.out.println(k + " " + items); }
             items = P2J7.josephus(items, k);
             check.update(items.toString().getBytes());
         }

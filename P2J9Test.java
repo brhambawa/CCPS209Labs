@@ -10,11 +10,34 @@ import java.util.zip.CRC32;
 
 public class P2J9Test {
 
+    // You can use this utility method to print true positions of the boolean[].
     private void printTrues(boolean[] a) {
         for(int i = 0; i < a.length; i++) {
             if(a[i]) { System.out.print(i + " "); }
         }
         System.out.println("");
+    }
+    
+    @Test public void testSubtractSquareExplicit() {
+        int[] coldStates = {0, 2, 5, 7, 10, 12, 15, 17, 20, 22, 34, 39};
+        boolean[] actual = P2J9.subtractSquare(40);
+        int pos = 0;
+        for(int i = 0; i < 40; i++) {
+            if(!actual[i]) {
+                assertEquals(i, coldStates[pos++]);
+            }
+        }
+    }
+    
+    @Test public void testSumOfTwoDistinctSquaresExplicit() {
+        int[] workingStates = {5, 10, 13, 17, 20, 25, 26, 29, 34, 37, 40, 41, 45, 50, 52};
+        boolean[] actual = P2J9.sumOfTwoDistinctSquares(53);
+        int pos = 0;
+        for(int i = 0; i < 53; i++) {
+            if(actual[i]) {
+                assertEquals(i, workingStates[pos++]);
+            }
+        }
     }
     
     @Test public void testSubtractSquareThousand() {
@@ -37,12 +60,16 @@ public class P2J9Test {
         test(1_000_000, 2362619161L, 1);
     }
     
+    // Same test harness for both methods.
     private void test(int n, long expected, int mode) {
         CRC32 check = new CRC32();
         boolean[] result;
-        if(mode == 0) { result = P2J9.subtractSquare(n); }
-        else { result = P2J9.sumOfTwoDistinctSquares(n); }
-        //printTrues(result);
+        if(mode == 0) { 
+            result = P2J9.subtractSquare(n); 
+        }
+        else {
+            result = P2J9.sumOfTwoDistinctSquares(n);
+        }
         for(int i = 0; i < n; i++) {
             check.update(result[i] ? i : 0);
         }
