@@ -14,6 +14,18 @@ public class P2J2Test {
     private static final int SEED = 12345;
     
     @Test public void testRemoveDuplicates() {
+        // Explicit test cases
+        assertEquals("", P2J2.removeDuplicates(""));
+        assertEquals("ilka", P2J2.removeDuplicates("ilkka"));
+        assertEquals("aba", P2J2.removeDuplicates("aaaaaaaabaaaaaaa"));
+        assertEquals("x", P2J2.removeDuplicates("x"));
+        assertEquals("x", P2J2.removeDuplicates("xxxxxxxxxxxxx"));
+        assertEquals("abcdefgh", P2J2.removeDuplicates("abcdefgh"));
+        assertEquals("\u1234\u5678\u6666", P2J2.removeDuplicates(
+        "\u1234\u5678\u5678\u5678\u5678\u5678\u5678\u6666"
+        ));
+        
+        // Pseudorandom fuzz tester
         Random rng = new Random(SEED);
         CRC32 check = new CRC32();        
         for(int i = 0; i < RUNS; i++) {
@@ -45,6 +57,13 @@ public class P2J2Test {
     
     @Test
     public void testUniqueCharacters() {
+        // Explicit test cases
+        assertEquals("abc", P2J2.uniqueCharacters("aaaaaabaaabbbaaababbbabbcbabababa"));
+        assertEquals("ilka orne", P2J2.uniqueCharacters("ilkka kokkarinen"));
+        assertEquals("", P2J2.uniqueCharacters(""));
+        assertEquals("\u4444", P2J2.uniqueCharacters("\u4444"));
+        
+        // Pseudorandom fuzz tester
         Random rng = new Random(SEED);
         CRC32 check = new CRC32(); 
         for(int i = 0; i < RUNS; i++) {
@@ -58,6 +77,42 @@ public class P2J2Test {
     
     @Test
     public void testCountSafeSquaresRooks() {
+        // Explicit test cases
+        boolean[][] b1 = {
+            {true , true , false},
+            {false, false, false},
+            {false, false, false}
+        };
+        assertEquals(2, P2J2.countSafeSquaresRooks(3, b1));
+        
+        boolean[][] b2 = {
+            {true , false, false, false},
+            {false, true , false, false},
+            {false, false, true , false},
+            {false, false, false, true }
+        };
+        assertEquals(0, P2J2.countSafeSquaresRooks(4, b2));
+        
+        boolean[][] b3 = {
+            {true}
+        };
+        assertEquals(0, P2J2.countSafeSquaresRooks(1, b3));
+        
+        boolean[][] b4 = {
+            {false}
+        };
+        assertEquals(1, P2J2.countSafeSquaresRooks(1, b4));
+        
+        boolean[][] b5 = {
+            {false, false, false, false, false},
+            {false, false, false, false, false},
+            {false, false, true, false, false},
+            {false, false, false, false, false},
+            {false, false, false, false, false}
+        };
+        assertEquals(16, P2J2.countSafeSquaresRooks(5, b5));
+        
+        // Pseudorandom fuzz tester
         Random rng = new Random(SEED);
         CRC32 check = new CRC32(); 
         int total = 0, answer;
